@@ -22,7 +22,7 @@ app.get('/',function(req,res){
 });
 
 app.get('/api/v1/usuarios', jwt(secret), (req, res) => {
-  if(req.user.name == "bakalia"){
+  if(req.user.sub == 1234567890){
     res.send(usuarios)
   }
   res.status(401).send({message: "Uste no esta autorizado para ver esta ruta"})
